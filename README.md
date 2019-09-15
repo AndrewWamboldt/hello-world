@@ -1,90 +1,224 @@
-# Welcome to GitHub
+import java.util.Scanner;
 
-Welcome to GitHubâ€”where millions of developers work together on software. Ready to get started? Letâ€™s learn how this all works by building and publishing your first GitHub Pages website!
+public class HW1 {
 
-## Repositories
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		final String lincolnGettysburg = "Fourscore and seven years ago our fathers brought forth,"
+				+ " on this continent, a new nation, conceived in liberty, and dedicated"
+				+ " to the proposition that all men are created equal. Now we are engaged"
+				+ " in a great civil war, testing whether that nation, or any nation so"
+				+ " conceived, and so dedicated, can long endure. We are met on a great"
+				+ " battle-field of that war. We have come to dedicate a portion of that"
+				+ " field, as a final resting-place for those who here gave their lives,"
+				+ " that that nation might live. It is altogether fitting and proper that"
+				+ " we should do this. But, in a larger sense, we cannot dedicate, we"
+				+ " cannot consecrate—we cannot hallow—this ground. The brave men, living"
+				+ " and dead, who struggled here, have consecrated it far above our poor"
+				+ " power to add or detract. The world will little note, nor long remember"
+				+ " what we say here, but it can never forget what they did here. It is"
+				+ " for us the living, rather, to be dedicated here to the unfinished work"
+				+ " which they who fought here have thus far so nobly advanced. It is rather"
+				+ " for us to be here dedicated to the great task remaining before us—that"
+				+ " from these honored dead we take increased devotion to that cause for"
+				+ " which they here gave the last full measure of devotion—that we here"
+				+ " highly resolve that these dead shall not have died in vain—that this"
+				+ " nation, under God, shall have a new birth of freedom, and that government"
+				+ " of the people, by the people, for the people, shall not perish from the earth."
+				+ " ---Abraham Lincoln";
+		;
+		final String washingtonRetirement = "The great events on which my resignation"
+				+ " depended having at length taken place; I have now the honor of offering"
+				+ " my sincere Congratulations to Congress and of presenting myself before"
+				+ " them to surrender into their hands the trust committed to me, and to claim"
+				+ " the indulgence of retiring from the Service of my Country.  Happy in the"
+				+ " confirmation of our Independence and Sovereignty, and pleased with the"
+				+ " opportunity afforded the United States of becoming a respectable Nation,"
+				+ " I resign with satisfaction the Appointment I accepted with diffidence. A"
+				+ " diffidence in my abilities to accomplish so arduous a task, which however"
+				+ " was superseded by a confidence in the rectitude of our Cause, the support"
+				+ " of the Supreme Power of the Union, and the patronage of Heaven."
+				+ " The Successful termination of the War has verified the most sanguine"
+				+ " expectations, and my gratitude for the interposition of Providence, and"
+				+ " the assistance I have received from my Country-men, encreases with every"
+				+ " review of the momentous Contest.  While I repeat my obligations to the"
+				+ " Army in general, I should do injustice to my own feelings not to acknowledge"
+				+ " in this place the peculiar Services and distinguished merits of the Gentlemen"
+				+ " who have been attached to my person during the War. It was impossible"
+				+ " the choice of confidential Officers to compose my family should have"
+				+ " been more fortunate. Permit me Sir, to recommend in particular those,"
+				+ " who have continued in Service to the present moment, as worthy of the"
+				+ " favorable notice and patronage of Congress I consider it an indispensable"
+				+ " duty to close this last solemn act of my Official life, by commending the"
+				+ " Interests of our dearest Country to the protection of Almighty God, and"
+				+ " those who have the superintendence of them, to his holy keeping.  Having"
+				+ " now finished the work assigned me, I retire from the great theatre of"
+				+ " Action; and bidding an Affectionate farewell to this August body under"
+				+ " whose orders I have so long acted, I here offer my Commission, and take"
+				+ " my leave of all the employments of public life. ---George Washington";
+		final String louLuckiestManAlive = "Fans, for the past two weeks you have been reading"
+				+ " about the bad break I got. Yet today I consider myself the luckiest man on"
+				+ " the face of this earth. I have been in ballparks for 17 years and have"
+				+ " never received anything but kindness and encouragement from you fans."
+				+ " Look at these grand men. Which of you wouldn’t consider it the highlight"
+				+ " of his career just to associate with them for even one day? Sure, I’m lucky."
+				+ " Who wouldn’t consider it an honor to have known Jacob Ruppert? Also,"
+				+ " the builder of baseball’s greatest empire, Ed Barrow? To have spent six"
+				+ " years with that wonderful little fellow, Miller Huggins? Then to have spent"
+				+ " the next nine years with that outstanding leader, that smart student of"
+				+ " psychology, the best manager in baseball today, Joe McCarthy? Sure, I’m lucky."
+				+ " When the New York Giants, a team you would give your right arm to beat, and"
+				+ " vice versa, sends you a gift — that’s something. When everybody down to the"
+				+ " groundskeepers and those boys in white coats remember you with trophies - that’s"
+				+ " something. When you have a wonderful mother-in-law who takes sides with you in"
+				+ " squabbles with her own daughter - that’s something. When you have a father and"
+				+ " a mother who work all their lives so you can have an education and build your"
+				+ " body - it’s a blessing. When you have a wife who has been a tower of strength"
+				+ " and shown more courage than you dreamed existed — that’s the finest I know."
+				+ " So I close in saying that I may have had a tough break, but I have an awful"
+				+ " lot to live for. ---Lou Gehrig";
+		String speechText = "";
+		String speech;
+		String choice;
+		int characters;
+		int sentences;
+		int x = 0; // breaks out of speech loop
+		int y = -1; // breaks out of indent loop
 
-Right now, weâ€™re in your first GitHub **repository**. A repository is like a folder or storage space for your project. Your project's repository contains all its files such as code, documentation, images, and more. It also tracks every change that youâ€”or your collaboratorsâ€”make to each file, so you can always go back to previous versions of your project if you make any mistakes.
+		System.out.println("Please select a speech to format. Choices are Gettysburg, Washington, or Lou: ");
+		speech = stdIn.nextLine();
 
-This repository contains three important files: The HTML code for your first website on GitHub, the CSS stylesheet that decorates your website with colors and fonts, and the **README** file. It also contains an image folder, with one image file.
+		while (speech.isEmpty()) {
+			System.out.println(
+					"Invalid entry, Please select a speech to format. Choices are Gettysburg, Washington, or Lou: ");
+			speech = stdIn.nextLine();
+		}
 
-## Describe your project
+		if (speech.contains("Gettysburg") || speech.contains("gettysburg")) {
+			System.out.println(speech + " Is in my memory.");
+			speechText = lincolnGettysburg;
+		}
 
-You are currently viewing your project's **README** file. **_README_** files are like cover pages or elevator pitches for your project. They are written in plain text or [Markdown language](https://guides.github.com/features/mastering-markdown/), and usually include a paragraph describing the project, directions on how to use it, who authored it, and more.
+		else if (speech.contains("Washington") || speech.contains("washington")) {
+			System.out.println(speech + " Is in my memory.");
+			speechText = washingtonRetirement;
+		} // checks for if initially the choices are picked and bypasses the do loop
+		else if (speech.toLowerCase().contains("lou")) {
+			System.out.println(speech + " Is in my memory.");
+			speechText = louLuckiestManAlive;
+		}
 
-[Learn more about READMEs](https://help.github.com/en/articles/about-readmes)
+		else if (!speech.contains("Gettysburg") || !speech.contains("gettysburg") || !speech.contains("Washington")
+				|| !speech.contains("washington") || !speech.contains("Lou") || !speech.contains("lou")) {
 
-## Your first website
+			do {
 
-**GitHub Pages** is a free and easy way to create a website using the code that lives in your GitHub repositories. You can use GitHub Pages to build a portfolio of your work, create a personal website, or share a fun project that you coded with the world. GitHub Pages is automatically enabled in this repository, but when you create new repositories in the future, the steps to launch a GitHub Pages website will be slightly different.
+				System.out.println(
+						"Invalid entry, Please select a speech to format. Choices are Gettysburg, Washington, or Lou: ");
 
-[Learn more about GitHub Pages](https://pages.github.com/)
+				speech = stdIn.nextLine();
 
-## Rename this repository to publish your site
+				if ("washington".equals(speech) || "lou".equals(speech) || "gettysburg".equals(speech)
+						|| "Lou".equals(speech) || "Washington".equals(speech) || "Gettysburg".equals(speech)) {
+					x++;
+				}
+				// User validation for entry ^^
 
-We've already set-up a GitHub Pages website for you, based on your personal username. This repository is called `hello-world`, but you'll rename it to: `username.github.io`, to match your website's URL address. If the first part of the repository doesnâ€™t exactly match your username, it wonâ€™t work, so make sure to get it right.
+			} while (x == 0);
+		}
 
-Let's get started! To update this repositoryâ€™s name, click the `Settings` tab on this page. This will take you to your repositoryâ€™s settings page. 
+		System.out.println("Please enter number of indents per first line, Between 0-2:");
+		choice = stdIn.nextLine();
 
-![repo-settings-image](https://user-images.githubusercontent.com/18093541/63130482-99e6ad80-bf88-11e9-99a1-d3cf1660b47e.png)
+		while (choice.isEmpty()) {
+			System.out.println("Invalid entry, Please enter the number of indents per first line, Between 0-2:");
+			choice = stdIn.nextLine();
+		}
+		if (choice.contains("1") || choice.contains("2") || choice.contains("0")) {
+			System.out.println(choice + " is a valid number.");
+		}
 
-Under the **Repository Name** heading, type: `username.github.io`, where username is your username on GitHub. Then click **Rename**â€”and thatâ€™s it. When youâ€™re done, click your repository name or browserâ€™s back button to return to this page.
+		else if (!(choice.contains("1")) || (!choice.contains("2")) || (!choice.contains("0"))) {
+			do {
+				System.out.println("No Actually... Please enter number of indents per first line, Between 0-2:");
+				choice = stdIn.nextLine();
+				if ("1".equals(choice) || "2".equals(choice) || "0".equals(choice)) {
+					y++;
+				}
+			} while (y == -1);
+			System.out.println(choice + " is a valid number.");
+		}
 
-<img width="1039" alt="rename_screenshot" src="https://user-images.githubusercontent.com/18093541/63129466-956cc580-bf85-11e9-92d8-b028dd483fa5.png">
+		System.out.println("Please enter number of characters allowed per line, between 30-120:");
+		characters = stdIn.nextInt();
 
-Once you click **Rename**, your website will automatically be published at: https://your-username.github.io/. The HTML fileâ€”called `index.html`â€”is rendered as the home page and you'll be making changes to this file in the next step.
+		if (characters >= 30 && characters <= 120) {
+			System.out.println(characters + " is a valid number");
+		} else if (characters <= 29 || characters >= 121) {
+			do {
+				System.out.println("The number entered is not within range. Please enter a number between 30-120:");
+				characters = stdIn.nextInt();
+				System.out.println(characters + " Is a valid number");
+			} while (characters < 30 || characters > 120);
 
-Congratulations! You just launched your first GitHub Pages website. It's now live to share with the entire world
+		}
 
-## Making your first edit
+		System.out.println("Please enter number of sentances per paragraph, between 3-8:");
+		sentences = stdIn.nextInt();
 
-When you make any change to any file in your project, youâ€™re making a **commit**. If you fix a typo, update a filename, or edit your code, you can add it to GitHub as a commit. Your commits represent your projectâ€™s entire historyâ€”and theyâ€™re all saved in your projectâ€™s repository.
+		if (sentences >= 3 && sentences <= 8) {
+			System.out.println(sentences + " is a valid number");
+		} else if (sentences <= 2 || sentences >= 9) {
+			do {
+				System.out.println("The number you have entered is not in ranges, please select a number between 3-8:");
+				sentences = stdIn.nextInt();
 
-With each commit, you have the opportunity to write a **commit message**, a short, meaningful comment describing the change youâ€™re making to a file. So you always know exactly what changed, no matter when you return to a commit.
+			} while (sentences < 3 || sentences > 8);
+			System.out.println(sentences + " is a valid number");
+		}
 
-## Practice: Customize your first GitHub website by writing HTML code
+		// if (speech.contains("Gettysburg") ||(speech.contains("gettysburg"))) {
+		int charCount = 0;
+		int sentCount = 0;
+		String line = "";
+		boolean newparagraph = true;
+		String[] arr = speechText.split(" ");
+		// for (String s : arr) {
 
-Want to edit the site you just published? Letâ€™s practice commits by introducing yourself in your `index.html` file. Donâ€™t worry about getting it right the first timeâ€”you can always build on your introduction later.
+		for (int i = 0; i < arr.length;) {
+			String s = arr[i];
+			if (s.startsWith("---")) {
 
-Letâ€™s start with this template:
+				System.out.println(s);
+				i++;
+			} else {
+				if (s.length() + line.length() < characters) {
+					if (s.contains(".") || s.contains("?") || s.contains("!")) {
+						++sentCount;
+					}
+					if (sentCount == 0 && line.length() == 0) {
+						line += "        ";
 
-```
-<p>Hello World! Iâ€™m [username]. This is my website!</p>
-```
+					} else if (line.length() > 0) {
+						line += " ";
+					}
 
-To add your introduction, copy our template and click the edit pencil icon at the top right hand corner of the `index.html` file.
+					line += s;
+					// System.out.println(sentCount);
+					i++;
 
-<img width="997" alt="edit-this-file" src="https://user-images.githubusercontent.com/18093541/63131820-0794d880-bf8d-11e9-8b3d-c096355e9389.png">
+				}
+
+				else {
+					System.out.println(line);
+
+					line = "";
+				}
+			}
+		}
+
+	}
+
+}
 
 
-Delete this placeholder line:
-
-```
-<p>Welcome to your first GitHub Pages website!</p>
-```
-
-Then, paste the template to line 15 and fill in the blanks.
-
-<img width="1032" alt="edit-githuboctocat-index" src="https://user-images.githubusercontent.com/18093541/63132339-c3a2d300-bf8e-11e9-8222-59c2702f6c42.png">
-
-
-When youâ€™re done, scroll down to the `Commit changes` section near the bottom of the edit page. Add a short message explaining your change, like "Add my introduction", then click `Commit changes`.
-
-
-<img width="1030" alt="add-my-username" src="https://user-images.githubusercontent.com/18093541/63131801-efbd5480-bf8c-11e9-9806-89273f027d16.png">
-
-Once you click `Commit changes`, your changes will automatically be published on your GitHub Pages website. Refresh the page to see your new changes live in action.
-
-:tada: You just made your first commit! :tada:
-
-## Extra Credit: Keep on building!
-
-Change the placeholder Octocat gif on your GitHub Pages website by [creating your own personal Octocat emoji](https://myoctocat.com/build-your-octocat/) or [choose a different Octocat gif from our logo library here](https://octodex.github.com/). Add that image to line 12 of your `index.html` file, in place of the `<img src=` link.
-
-Want to add even more code and fun styles to your GitHub Pages website? [Follow these instructions](https://github.com/github/personal-website) to build a fully-fledged static website.
-
-![octocat](./images/create-octocat.png)
-
-## Everything you need to know about GitHub
-
-Getting started is the hardest part. If thereâ€™s anything youâ€™d like to know as you get started with GitHub, try searching [GitHub Help](https://help.github.com). Our documentation has tutorials on everything from changing your repository settings to configuring GitHub from your command line.
